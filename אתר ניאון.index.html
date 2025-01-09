@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INBAR MENASHE</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-image: url('https://images.unsplash.com/photo-1518541369659-c60c0a60abac'); /* רקע של מועדון */
+            background-size: cover;
+            background-position: center;
+            padding: 50px;
+            color: #fff;
+            height: 100vh;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 60px;
+            color: #ff69b4; /* צבע ורוד ניאוני */
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.8), 0 0 20px rgba(255, 105, 180, 0.8), 0 0 30px rgba(255, 105, 180, 0.8);
+            margin-bottom: 30px;
+        }
+        p {
+            font-size: 25px;
+            color: #a9a9a9; /* אפור בהיר */
+            line-height: 1.8;
+            margin-top: 20px;
+            text-shadow: 0 0 5px rgba(169, 169, 169, 0.8);
+        }
+        .button {
+            display: inline-block;
+            background-color: #8a2be2; /* צבע סגול ניאוני */
+            color: white;
+            padding: 15px 40px;
+            font-size: 20px;
+            text-decoration: none;
+            border-radius: 30px;
+            margin-top: 20px;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.7);
+        }
+        .button:hover {
+            background-color: #ff1493; /* ורוד זוהר */
+            box-shadow: 0 0 25px rgba(255, 20, 147, 0.8);
+            transform: scale(1.1);
+        }
+        .buttons-container {
+            margin-top: 50px;
+        }
+        img {
+            width: 80%;
+            max-width: 600px;
+            border-radius: 15px;
+            margin-top: 20px;
+            box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
+        }
+        .back-button {
+            background-color: #4682b4; /* כחול ניאוני */
+            box-shadow: 0 0 15px rgba(70, 130, 180, 0.7);
+        }
+        .back-button:hover {
+            background-color: #1e3c63; /* כחול כהה */
+            box-shadow: 0 0 25px rgba(70, 130, 180, 0.9);
+        }
+        .glowing-text {
+            font-size: 28px;
+            color: #ff6347;
+            text-shadow: 0 0 5px rgba(255, 99, 71, 0.8), 0 0 10px rgba(255, 99, 71, 0.8), 0 0 15px rgba(255, 99, 71, 0.8);
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- דף הבית -->
+    <div id="home-page">
+        <h1>INBAR MENASHE</h1>
+        <p>שלום וברוכה הבאה לעולם שלי! כאן תמצאי תמונות מגניבות, סרטונים ביוטיוב, וכתובת במפות שיהפכו את היום שלך ליותר כיף ומרענן.</p>
+
+        <div class="buttons-container">
+            <!-- כפתור לתמונה -->
+            <a href="#image-page" class="button">תמונה</a>
+            
+            <!-- כפתור ליוטיוב -->
+            <a href="https://www.youtube.com" class="button" target="_blank">יוטיוב</a>
+            
+            <!-- כפתור לגוגל מפות -->
+            <a href="https://www.google.com/maps" class="button" target="_blank">גוגל מפות</a>
+        </div>
+    </div>
+
+    <!-- דף התמונה -->
+    <div id="image-page" style="display:none;">
+        <h1>תמונה שלי!</h1>
+        <img src="https://inbarhtml.blob.core.windows.net/inbarsite/Dog_Breeds.jpg" alt="תמונה שלי">
+        
+        <!-- כפתור חזרה לדף הראשי -->
+        <a href="#home-page" class="button back-button">חזרה לדף הראשי</a>
+
+        <p class="glowing-text">תמונות מרהיבות, כמו שאני אוהבת!</p>
+    </div>
+
+    <script>
+        // קוד JavaScript להפעלת המעבר בין הדפים
+        const imageButton = document.querySelector('.button[href="#image-page"]');
+        const backButton = document.querySelector('.button[href="#home-page"]');
+        const homePage = document.getElementById('home-page');
+        const imagePage = document.getElementById('image-page');
+        
+        imageButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            homePage.style.display = 'none';
+            imagePage.style.display = 'block';
+        });
+        
+        backButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            homePage.style.display = 'block';
+            imagePage.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
